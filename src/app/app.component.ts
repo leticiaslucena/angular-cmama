@@ -1,3 +1,5 @@
+//configuraçoes do componentes - modulo principal dos componentes
+
 import { Component } from '@angular/core';
 
 @Component({

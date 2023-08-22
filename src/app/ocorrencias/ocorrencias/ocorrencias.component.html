@@ -1,0 +1,64 @@
+<!--Card criado pela importação feita atravez do //import {MatCardModule} from '@angular/material/card' na pasta (ocorrencias.modulo.ts)
+entro no site do material.angular e importo o api - depois o codigo em html do designer que escolher para minha pagina-->
+
+<div class="margem">
+    <mat-card>
+        <mat-card-header>
+            Consulta de exames de mamografia - Junho a Dezembro
+        </mat-card-header>
+        <table matSort (matSortChange)="ocorrencia_exame">
+            <tr>
+                <th mat-sort-header="id">ID</th>
+                <th mat-sort-header="regioes">Região</th>
+                <th mat-sort-header="Mes">Mês</th>
+                <th mat-sort-header="faixa_n">Faixa Etária</th>
+                <th mat-sort-header="total_exames">Nª de Exames</th>
+
+            </tr>
+            <!--aqui esta pecorrendo um lista no html usando a propriedade do angular-->
+            <tr *ngFor="let element of ocorrencia_exame">
+                <td>{{element.id}}</td>
+                <td>{{element.regiao_id}}</td>
+                <td>{{element.Mes}}</td>
+                <td>{{element.faixa_id}}</td>
+                <td>{{element.qnt_exames}}</td>
+
+            </tr>
+        </table>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-subtitle>Relação de Regiões Brasileiras</mat-card-subtitle>
+        <table matSort (matSortChange)="regioes">
+            <tr>
+                <th mat-sort-header="id">ID</th>
+                <th mat-sort-header="regiao'">Região</th>
+                <th mat-sort-header="total_exames">N° Exames</th>
+            </tr>
+            <tr *ngFor="let element of regioes">
+                <td>{{element.id}}</td>
+                <td>{{element.regiao}}</td>
+                <td>{{element.total_exames}}</td>
+            </tr>
+        </table>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-subtitle>Faixa Etaria das mulheres que realizaram os exames</mat-card-subtitle>
+        <table matSort (matSortChange)="faixaetarias">
+          <tr>
+            <th mat-sort-header="id">ID</th>
+            <th mat-sort-header="faixa_i">Faixa inicial</th>
+            <th mat-sort-header="faixa_n">Faixa final</th>
+            <th mat-sort-header="descricao">Descrição</th>
+          </tr>
+          <tr *ngFor="let element of faixaetarias">
+            <td>{{element.id}}</td>
+            <td>{{element.faixa_i}}</td>
+            <td>{{element.faixa_n}}</td>
+            <td>{{element.descricao}}</td>
+          </tr>
+        </table>
+      </mat-card>
+
+</div>
